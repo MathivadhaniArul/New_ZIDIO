@@ -1,7 +1,15 @@
+import Dataset from "../models/dataset.models.js";
+
 export const dataSetUpload=async(req,res)=>{
 try{if (!req.file){
     return res.status(400).json({message:"No File uploaded"});
 }
+const dataset=new Dataset({
+    user:req.user.userId,
+    filename:req.file.filename,
+    filepath:req.file.filepath,
+});
+await dataset.save();
 return res.status(200).json({message:"File uploaded successfully"});
 }
 catch(error){
