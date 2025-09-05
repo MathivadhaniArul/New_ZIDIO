@@ -4,7 +4,8 @@
 # ----------------------------------------------------------------
 # Ignore node_modules directories in all subfolders, including in /frontend and /backend
 node_modules/
-
+# ignore uploads folder
+backend/uploads/
 # Yarn PnP files
 .pnp.*
 .yarn/*
